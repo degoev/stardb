@@ -1,0 +1,47 @@
+nav{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-flow: row;
+}
+
+h1{
+    margin: 15px;
+    font-size: 60px;
+}
+
+#buttons{
+    display: flex;
+    flex-flow: row;
+}
+
+li{
+    margin: 15px;
+    flex: 1;
+}
+
+a{
+    color: white;
+}
+
+a:link { 
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+} 
+
+a:visited { 
+    text-decoration: none; 
+} 
+a:active { 
+    text-decoration: none; 
+}
+
+h1 a:hover{
+    color: grey;
+}
+
+li a:hover{
+    text-decoration: none; 
+    color:white;
+}
+
+
