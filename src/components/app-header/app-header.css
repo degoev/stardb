@@ -10,6 +10,10 @@ h1{
     font-size: 60px;
 }
 
+h1 a{
+    color: white;
+}
+
 #buttons{
     display: flex;
     flex-flow: row;
@@ -20,8 +24,9 @@ li{
     flex: 1;
 }
 
-a{
+li a{
     color: white;
+    font-size: 1.2rem;
 }
 
 a:link { 
