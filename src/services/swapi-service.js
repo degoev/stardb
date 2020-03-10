@@ -1,6 +1,8 @@
 export default class SwapiService{
+   
     _apiBase = "https://swapi.co/api";
-    getResource = async (url) => {
+    
+    async getResource(url){
         let res = await fetch(`${this._apiBase}${url}`);
         if(!res.ok) throw new Error("ОШИБОЧКА ВЫШЛА, ТЫ ЧТО-ТО ПЕРЕПУКАЛ");
         return await res.json();
@@ -16,12 +18,13 @@ export default class SwapiService{
     }
 
     async getAllPlanets(){
-        let res = await this.getResource("/planet/");
-        return await res.results;
+        let res = await this.getResource("/planets/");
+        return await res.results.map(this._transformPlanet);
     }
 
-    getPlanet(id){
-        return this.getResource(`/planet/${id}`);
+    async getPlanet(id){
+        let planet = await this.getResource(`/planets/${id}`);
+        return this._transformPlanet(planet);
     }
 
     async getAllStarships(){
@@ -31,5 +34,14 @@ export default class SwapiService{
 
     getStarship(id){
         return this.getResource(`/starships/${id}`);
+    }
+
+    _transformPlanet(planet){
+        return {
+            name: planet.name,
+            population: planet.population,
+            rotationPeriod: planet.rotation_period,
+            diameter: planet.diameter
+        };
     }
 }
