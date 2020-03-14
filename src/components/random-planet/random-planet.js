@@ -9,11 +9,7 @@ import Error from "../error-indicator/error-indicator";
 export default class RandomPlanet extends Component {
     constructor() {
         super();
-
-        this.updatePlanet();
-
-        //setInterval(async () => await this.updatePlanet(), 5000);
-
+        
         this.state = {
             planet: {},
             loading: true,
@@ -21,18 +17,33 @@ export default class RandomPlanet extends Component {
         };
     }
 
+    componentDidMount(){
+        this.updatePlanet();
+
+        this.interval = setInterval(this.updatePlanet, 7000);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
+    }
+
     swapiService = new SwapiService()
 
     onError = () => {
-        this.setState({ error: true, loading: false })
+        this.setState({ error: true, loading: false });
+        //throw new Error('что-то пошло не так');
     };
+
+    componentDidCatch() {
+        clearInterval(this.interval);
+    }
 
     onPlanetLoaded = (planet) => {
         this.setState({ planet, loading: false })
     };
 
     updatePlanet = () => {
-        console.log("update")
+        console.log("update");
         let id = Math.floor(Math.random() * 18) + 2;
         this.swapiService
             .getPlanet(id)
