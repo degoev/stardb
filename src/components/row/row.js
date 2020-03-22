@@ -4,7 +4,7 @@ function Row(props) {
     return (
         <div className="row mb2">
             <div className="col-md-6">
-                {props.left}
+               {props.left}
             </div>
             <div className="col-md-6">
                 {props.right}

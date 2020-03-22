@@ -54,12 +54,12 @@ export default class ItemDetails extends Component {
         }
 
         let cardData = this.props.cardData(item);
-        let { cardProps } = this.props;
+        let { cardProps, getImageUrl } = this.props;
         return (
             <ErrorBoundry>
                 <div className="person-details card jumbotron rounded">
                     <img className="person-image"
-                        src={`https://starwars-visualguide.com/assets/img/${this.props.imgUrl}/${this.props.itemID}.jpg`} alt="person-details.jpg" />
+                        src={getImageUrl(item.id)} alt="person-details.jpg" />
 
                     <div className="card-body">
                         <h4>{cardData[0]}</h4>

@@ -3,13 +3,17 @@ import React, { Component } from "react";
 import ItemList from "../item-list/item-list";
 import ItemDetails from "../item-details/item-details";
 import Row from "../row/row";
+import withSwapiService from "../hoc-helpers/with-swapi-service";
 
-export default class ItemsPage extends Component {
+class ItemsPage extends Component {
     constructor(){
         super();
         this.state = {
             toggledItemId: null
         }
+    }
+    componentDidMount(){
+        console.log("mounted item page")
     }
 
     toggleItem = (toggledItemId) => {
@@ -19,19 +23,18 @@ export default class ItemsPage extends Component {
     render() {
         let { toggledItemId } = this.state;
         
-        let itemList = <ItemList
-            onToggleItem={this.toggleItem}
-            getData={this.props.data.getData()} />;
+        let itemList =  <ItemList
+            onToggleItem={this.toggleItem} 
+            {...this.props} />;
 
         let itemDetails = <ItemDetails
             itemID={toggledItemId}
-            cardData={this.props.data.cardData}
-            getItem={this.props.data.getItem()}
-            imgUrl={this.props.data.imgUrl}
-            cardProps={this.props.data.cardProps} />;
+            {...this.props} />;
 
         return (
             <Row left={itemList} right={itemDetails} />
         );
     }
 };
+
+export default withSwapiService(ItemsPage);
