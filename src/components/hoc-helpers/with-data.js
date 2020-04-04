@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import SwapiService from "../../services/swapi-service";
-import Spinner from "../spinner/spinner";
-import ErrorBoundry from "../error-boundry/error-boundry";
-import ErrorButton from "../error-button/error-button";
+import SwapiService from "../../services/swapi-service.js";
+import Spinner from "../spinner/spinner.js";
+import ErrorBoundry from "../error-boundry/error-boundry.js";
+import ErrorButton from "../error-button/error-button.js";
 
 
 let WithData = (View) =>{

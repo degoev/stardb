@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from "prop-types";
-
-import withData from "../hoc-helpers/with-data";
 import { withRouter } from "react-router-dom";
-import withSwapiService from "../hoc-helpers/with-swapi-service";
-import withCompose  from "../hoc-helpers/with-compose";
+
+import withData from "../hoc-helpers/with-data.js";
+import withSwapiService from "../hoc-helpers/with-swapi-service.js";
+import withCompose  from "../hoc-helpers/with-compose.js";
 
 import './item-list.css';
 

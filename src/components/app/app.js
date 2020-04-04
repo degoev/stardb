@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import SwapiService from "../../services/swapi-service";
-import { SwapiServiceProvider } from "../../services/swapi-service-context";
+import SwapiService from "../../services/swapi-service.js";
+import { SwapiServiceProvider } from "../../services/swapi-service-context.js";
 
 import "./app.css";
-import Header from "../app-header/app-header";
-import RandomPlanet from "../random-planet/random-planet";
-import ErrorBoundry from "../error-boundry/error-boundry";
+import Header from "../app-header/app-header.js";
+import RandomPlanet from "../random-planet/random-planet.js";
+import ErrorBoundry from "../error-boundry/error-boundry.js";
 import { 
   PeoplePage, 
   StarshipsPage, 
   PlanetsPage, 
   StarshipDetails, 
-  PlanetsDetails } from "../sw-components/sw-items-page";
-import LoginPage from "../pages/login-page";
-import SecretPage from "../pages/secret-page";
+  PlanetsDetails } from "../sw-components/sw-items-page.js";
+import LoginPage from "../pages/login-page.js";
+import SecretPage from "../pages/secret-page.js";
 
 export default class App extends Component {
   constructor(){

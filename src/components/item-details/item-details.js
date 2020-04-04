@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import "./item-details.css";
-import SwapiService from "../../services/swapi-service";
-import Spinner from "../spinner/spinner";
-import ErrorButton from "../error-button/error-button";
-import ErrorBoundry from "../error-boundry/error-boundry";
-import withSwapiService from "../hoc-helpers/with-swapi-service";
+
+import SwapiService from "../../services/swapi-service.js";
+import Spinner from "../spinner/spinner.js";
+import ErrorButton from "../error-button/error-button.js";
+import ErrorBoundry from "../error-boundry/error-boundry.js";
+import withSwapiService from "../hoc-helpers/with-swapi-service.js";
 
 class ItemDetails extends Component {
     constructor() {

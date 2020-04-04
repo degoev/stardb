@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./random-planet.css";
 
-import SwapiService from "../../services/swapi-service";
-import Spinner from "../spinner/spinner";
-import ErrorButton from "../error-button/error-button";
-import ErrorBoundry from "../error-boundry/error-boundry";
+import SwapiService from "../../services/swapi-service.js";
+import Spinner from "../spinner/spinner.js";
+import ErrorButton from "../error-button/error-button.js";
+import ErrorBoundry from "../error-boundry/error-boundry.js";
 
 export default class RandomPlanet extends Component {
     constructor() {
