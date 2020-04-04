@@ -1,8 +1,8 @@
 import React from "react";
 
-import ItemList from "../item-list/item-list";
-import ItemDetails from "../item-details/item-details";
-import Row from "../row/row";
+import ItemList from "../item-list/item-list.js";
+import ItemDetails from "../item-details/item-details.js";
+import Row from "../row/row.js";
 
 let personsData = {
      cardData(item) {

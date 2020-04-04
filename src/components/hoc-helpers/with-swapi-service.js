@@ -1,5 +1,5 @@
 import React from "react";
-import { SwapiServiceConsumer } from "../../services/swapi-service-context";
+import { SwapiServiceConsumer } from "../../services/swapi-service-context.js";
 
 let methodsToProps = (swapiService, Item) => {
      return {
