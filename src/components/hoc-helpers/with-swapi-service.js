@@ -15,7 +15,7 @@ let withSwapiService = (Wrapped) => {
                <SwapiServiceConsumer>{
                     (swapiService) => {
                          return (<Wrapped 
-                         {...methodsToProps(swapiService, props.item)}
+                         {...methodsToProps(swapiService, props.object)}
                          {...props} />);
                     }
                }</SwapiServiceConsumer>

@@ -20,17 +20,17 @@ h1 a{
 }
 
 li{
+    list-style-type: none;
     margin: 15px;
     flex: 1;
 }
 
-li a{
-    color: white;
+#buttons span{
     font-size: 1.2rem;
 }
-
+/* 
 a:link { 
-    text-decoration: none; /* Убирает подчеркивание для ссылок */
+    text-decoration: none;
 } 
 
 a:visited { 
@@ -47,6 +47,6 @@ h1 a:hover{
 li a:hover{
     text-decoration: none; 
     color:white;
-}
+} */
 
 

@@ -4,8 +4,9 @@ import SwapiService from "../../services/swapi-service";
 import Spinner from "../spinner/spinner";
 import ErrorButton from "../error-button/error-button";
 import ErrorBoundry from "../error-boundry/error-boundry";
+import withSwapiService from "../hoc-helpers/with-swapi-service";
 
-export default class ItemDetails extends Component {
+class ItemDetails extends Component {
     constructor() {
         super();
         this.state = {
@@ -21,6 +22,7 @@ export default class ItemDetails extends Component {
     }
     componentDidUpdate(prevProps) {
         if (this.props.itemID !== prevProps.itemID) {
+            console.log("item details did update");
             this.updateItem();
         }
     }
@@ -51,7 +53,7 @@ export default class ItemDetails extends Component {
                     <Spinner />
                 </div>
             );
-        }
+        } 
 
         let cardData = this.props.cardData(item);
         let { cardProps, getImageUrl } = this.props;
@@ -84,3 +86,5 @@ export default class ItemDetails extends Component {
         );
     }
 };
+
+export default withSwapiService(ItemDetails);

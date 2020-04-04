@@ -1,6 +1,8 @@
 import React from "react";
 
-import ItemsPage from "../items-page/items-page";
+import ItemList from "../item-list/item-list";
+import ItemDetails from "../item-details/item-details";
+import Row from "../row/row";
 
 let personsData = {
      cardData(item) {
@@ -16,16 +18,44 @@ let starshipData = {
      cardProps: ["Model:", "Manufacturer:", "Cost:"]
 };
 
-let PeoplePage = () => {
-     return <ItemsPage item="Person" {...personsData} />
+let planetsData = {
+     cardData(item) {
+          return [item.name, item.population, item.rotationPeriod, item.diameter]
+     },
+     cardProps: ["Population:", "Rotation period:", "Diameter:"]
 };
 
-let StarshipPage = () => {
-     return <ItemsPage item="Starship" {...starshipData} />
+
+// Pages
+let PeoplePage = ({itemID}) => {
+     return <Row left={<ItemList object="Person" />} 
+     right={<ItemDetails object="Person" {...personsData} itemID={itemID} />} />
+};
+
+let StarshipsPage = () => {
+     return <ItemList object="Starship" />
+};
+
+let PlanetsPage = () => {
+     return <ItemList object="Planet" />
+};
+
+
+// Details
+
+let StarshipDetails = (props) => {
+     return <ItemDetails object="Starship" {...starshipData} {...props} />
+};
+
+let PlanetsDetails = (props) => {
+     return <ItemDetails object="Planet" {...planetsData} {...props} />
 };
 
 export {
      PeoplePage,
-     StarshipPage
+     StarshipsPage,
+     PlanetsPage,
+     StarshipDetails,
+     PlanetsDetails
 };
 
